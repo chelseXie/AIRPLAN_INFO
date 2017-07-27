@@ -126,7 +126,7 @@ def getYanTaiStartInfo(yantaiUrl):
         port_name = dict["HX"].replace("-",",")
         if port_name is not None and len(port_name)>3 and port_name[0:3]=="烟台,":
             port_name=port_name.replace("烟台,","")
-        plan = (dict["HBH"],dict["AIRCOMPANY"],dict["HX"],sendDate,dict["JX"],dict["JHQFSJ"],"" if "1900-01-01" in dict["YJQFSJ"] else dict["YJQFSJ"],
+        plan = (dict["HBH"],dict["AIRCOMPANY"],dict["HX"],sendDate,dict["JX"],dict["JHQFSJ"],dict["YJQFSJ"],
                 dict["SJQFSJ"],"","","",dict["HBZT"],dict["HBYCZT"],dict["HBYCYY"],
                 dict["GXHB"],"1",port_name,dict["DJK"],yantaiAirPort,nowTime,nowTime)
         plansData.append(plan)
