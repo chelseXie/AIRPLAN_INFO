@@ -156,15 +156,15 @@ db = dboperator.Mysqldboperator("第一次初始化数据库连接")
 #插入青岛机场出发信息
 insertSQL = """insert flight (send_date,start_plan,flight_number,company,start_actual,port_name,arrive_estimate,status,flight_type,air_port,create_time,modify_time) 
             values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
-#db.insertBatch(insertSQL,getQingDaoStartInfo(body_value,header,False))
+db.insertBatch(insertSQL,getQingDaoStartInfo(body_value,header,False))
 #插入青岛国际航线信息
-#db.insertBatch(insertSQL,getQingDaoStartInfo(body_value,header,True))
+db.insertBatch(insertSQL,getQingDaoStartInfo(body_value,header,True))
 #插入青岛机场到达信息
 insertSQL = """insert flight (send_date,arrive_plan,flight_number,company,port_name,arrive_estimate,arrive_actual,plan_port,status,flight_type,air_port,create_time,modify_time) 
             values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
-#db.insertBatch(insertSQL,getQingDaoArriveInfo(body_value,header,False))
+db.insertBatch(insertSQL,getQingDaoArriveInfo(body_value,header,False))
 #插入青岛国际航线信息
-#db.insertBatch(insertSQL,getQingDaoArriveInfo(body_value,header,True))
+db.insertBatch(insertSQL,getQingDaoArriveInfo(body_value,header,True))
 #插入烟台出港航班数据
 insertSQL = """insert flight (flight_number,company,line,send_date,plane_type,start_plan,start_estimate,start_actual,arrive_plan,arrive_estimate,arrive_actual,status,
             exception,exception_reason,flight_number_share,flight_type,port_name,plan_port,air_port,create_time,modify_time) 
